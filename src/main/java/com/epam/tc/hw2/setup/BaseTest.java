@@ -1,9 +1,9 @@
-package setup;
+package com.epam.tc.hw2.setup;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-import pageObjects.PageObject;
+import com.epam.tc.hw2.pageObjects.PageObject;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -13,12 +13,12 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    IPageObject po;
+    private static PageObject po;
 
     @Override
     public AppiumDriver getDriver() { return appiumDriver; }
 
-    public IPageObject getPo() {
+    public IPageObject getPageObject() {
         return po;
     }
 
@@ -40,8 +40,8 @@ public class BaseTest implements IDriver {
     private void setAppiumDriver(String platformName, String deviceName, String browserName, String app){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //mandatory Android capabilities
-        capabilities.setCapability("platformName",platformName);
-        capabilities.setCapability("deviceName",deviceName);
+        capabilities.setCapability("platformName", platformName);
+        capabilities.setCapability("deviceName", deviceName);
 
         if(app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
 

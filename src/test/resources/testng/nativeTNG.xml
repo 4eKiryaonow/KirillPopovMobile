@@ -3,7 +3,7 @@
   <parameter name="appType" value="native"/>
   <parameter name="deviceName" value="YTRDU17710000771"/>
   <parameter name="platformName" value="Android"/>
-  <parameter name="app" value="C:/Users/nwtadmin/Desktop/Programming/epam/Homework_Mobile/Mobile/EPAMTestApp.apk"/>
+  <parameter name="app" value="./src/main/resources/EPAMTestApp.apk"/>
   <test name="Native tests">
     <groups>
       <run>

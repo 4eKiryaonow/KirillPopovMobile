@@ -1,4 +1,4 @@
-package pageObjects;
+package com.epam.tc.hw2.pageObjects.webApp;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.support.PageFactory;

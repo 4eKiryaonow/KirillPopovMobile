@@ -23,6 +23,11 @@
       <artifactId>testng</artifactId>
       <version>7.1.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.22.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -59,7 +64,7 @@
         <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
-        <suite.file>${testng.configs.path}/nativeTNG.xml</suite.file>
+        <suite.file>${testng.configs.path}/testng/nativeTNG.xml</suite.file>
       </properties>
     </profile>
 
@@ -69,7 +74,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <suite.file>${testng.configs.path}/webTNG.xml</suite.file>
+        <suite.file>${testng.configs.path}/testng/webTNG.xml</suite.file>
       </properties>
     </profile>
   </profiles>
