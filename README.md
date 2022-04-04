@@ -1,4 +1,4 @@
-# [Tutorial: How to run tests in the project](https://github.com/4eKiryaonow/KirillPopovMobile/blob/homework_2/README.md)
+## Tutorial: How to run tests in the project
 ***
 1. Run some AVD via Android Studio or connect Android physical device via USB.
 2. Run Appium Server
