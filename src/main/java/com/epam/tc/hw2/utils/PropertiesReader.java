@@ -1,4 +1,4 @@
-package com.epam.tc.hw2.utilities;
+package com.epam.tc.hw2.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -2,7 +2,6 @@ package com.epam.tc.hw2.pageObjects.nativeApp;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class RegistrationPageObject extends NativePageObject {

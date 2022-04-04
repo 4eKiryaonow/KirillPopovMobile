@@ -1,10 +1,9 @@
 package com.epam.tc.hw2.pageObjects;
 
 import com.epam.tc.hw2.pageObjects.nativeApp.LoginPageObject;
-import io.appium.java_client.AppiumDriver;
-import com.epam.tc.hw2.pageObjects.nativeApp.NativePageObject;
 import com.epam.tc.hw2.pageObjects.webApp.WebPageObject;
 import com.epam.tc.hw2.setup.IPageObject;
+import io.appium.java_client.AppiumDriver;
 
 public class PageObject implements IPageObject {
 
@@ -16,7 +15,7 @@ public class PageObject implements IPageObject {
         driver = appiumDriver;
         System.out.println("Current app type: " + appType);
         switch (appType) {
-            case "webApp":
+            case "web":
                 somePageObject = new WebPageObject(appiumDriver);
                 break;
             case "native":

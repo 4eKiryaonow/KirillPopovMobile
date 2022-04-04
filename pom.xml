@@ -64,7 +64,7 @@
         <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
-        <suite.file>${testng.configs.path}/testng/nativeTNG.xml</suite.file>
+        <suite.file>${testng.configs.path}/nativeTNG.xml</suite.file>
       </properties>
     </profile>
 
@@ -74,7 +74,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <suite.file>${testng.configs.path}/testng/webTNG.xml</suite.file>
+        <suite.file>${testng.configs.path}/webTNG.xml</suite.file>
       </properties>
     </profile>
   </profiles>
