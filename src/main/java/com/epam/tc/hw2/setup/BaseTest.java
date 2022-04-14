@@ -15,7 +15,7 @@ import org.testng.annotations.Parameters;
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    private static PageObject po;
+    private static PageObject pageObject;
 
     @Override
     public AppiumDriver getDriver() {
@@ -23,7 +23,7 @@ public class BaseTest implements IDriver {
     }
 
     public IPageObject getPageObject() {
-        return po;
+        return pageObject;
     }
 
     @Parameters({"platformName", "appType", "deviceName", "browserName", "app"})
@@ -65,6 +65,6 @@ public class BaseTest implements IDriver {
     }
 
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
-        po = new PageObject(appType, appiumDriver);
+        pageObject = new PageObject(appType, appiumDriver);
     }
 }
