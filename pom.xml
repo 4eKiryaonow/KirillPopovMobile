@@ -42,8 +42,7 @@
             <suiteXmlFile>${suite.file}</suiteXmlFile>
           </suiteXmlFiles>
           <systemPropertyVariables>
-            <token>f1pA58ddGFXN16l2f%6bvnsJ3kgiYI3iWRBHXNWOMsa59YaioQlZMs0n6Zii3w0h13fDH2+gPCU0J9c2f%1Vx5o3bbqOlJfdJDDPK7Y3T29WbaNtHxx2f%vdp50jqnvnvKH4+xjA9OozYtbeqdOl2f%6FbL8GCYznCfNxSDhqlXgtCMmY2CmachKFagrk+xzIvUpcnkiEgNhzS9J7T70j8a4qcZUfOOvO62HL8c76dH4wQBy92f%htsgO9SE6i3gYtG6H9VMk493UjcmzM4+pizdERK1UPOSiA2f%gYEU2TFMGmyj38OFOK1YY9uv+XFjpMZsqq2HN2zym2f%xtIGpYmvdwwpnAJ1PsaU5vAoMg9ji7eDDmNx4iCYqWhOs3uq1TQjoqbfDkOy0iUHEQlEBsTPzswlq+s547jh2f%2WVFIGmRM2eWqcorbkKpYvugEg2xPQ52f%g4AdTxNEsjlPD2f%9jgB4jaXCcs2f%kLMM0ak5QT+V9gp2f%E57vQd1zM2AKo6CRGpHMKo3jPKdDhO+3jYWQkIS7gPmoBhTyAGydkqITrxQifAhb49VaTfR92f%ADRvwnROWxn408V1J0vrtM4afBUD9jGoQT1jI+yN2f%LUwxGZS5CtdOoyBbn3hxJV7WqOBPHtbHDsOyaCGlwK26FZkETGyZTla5aslLiPnmld5VOKIBWbGVjjeo3DBS9in9Mgzd5UXu9ZNiOD+EPzOs+uwKIIHWs2f%dSs2e1OVW1f2f%XZgM2MGImejpTirOpreKgTdmV7dRYApUdOiMukd2f%02f%83hkbvwdeEy4Jjt1tAqenXCgeToEfMefjs6CF2f%7jO45cmnAVAJwxFXvANkFhei53lGDB+lsHtCAY2f%wjqHVQ6gmCRbxgrEDE4x210uMNJCETUvkqCJDI3HqHuEyOmsHDNCsMdlEpfdkjonNhwHPsGXgE</token>
-            <ts.appium>https://EPM-TSTF:${token}@mobilecloud.epam.com/wd/hub</ts.appium>
+
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -64,6 +63,24 @@
       <id>cloudWebAndroid</id>
       <properties>
         <suite.file>${project.basedir}/src/test/resources/cloudWebAndroidTNG.xml</suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>cloudNativeAndroid</id>
+      <properties>
+        <suite.file>${project.basedir}/src/test/resources/cloudNativeAndroidTNG.xml</suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>cloudWebIos</id>
+      <properties>
+        <suite.file>${project.basedir}/src/test/resources/cloudWebIosTNG.xml</suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>cloudNativeIos</id>
+      <properties>
+        <suite.file>${project.basedir}/src/test/resources/cloudNativeIosTNG.xml</suite.file>
       </properties>
     </profile>
   </profiles>

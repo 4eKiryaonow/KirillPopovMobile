@@ -1,7 +1,6 @@
 package com.epam.tc.hw2.setup;
 
 import com.epam.tc.hw2.pageObjects.PageObject;
-import com.sun.javafx.binding.StringFormatter;
 import io.appium.java_client.AppiumDriver;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -19,7 +18,7 @@ import org.testng.annotations.Parameters;
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
-    private static PageObject po;
+    private static PageObject pageObject;
 
     @Override
     public AppiumDriver getDriver() {
@@ -27,7 +26,7 @@ public class BaseTest implements IDriver {
     }
 
     public IPageObject getPageObject() {
-        return po;
+        return pageObject;
     }
 
     @Parameters({"platformName", "appType", "deviceName", "udid", "browserName", "app", "appPackage",
@@ -74,20 +73,18 @@ public class BaseTest implements IDriver {
         capabilities.setCapability("appActivity", appActivity);
 
         // Capabilities for test of iOS native app on EPAM Mobile Cloud
-        capabilities.setCapability("bindleId", bundleId);
+        capabilities.setCapability("bundleId", bundleId);
 
         if (platformName.equals("iOS")) {
             capabilities.setCapability("automationName", "XCUITest");
         }
-
-        String s = "+ctebRyzdAfsJ9I1OaYwaMQNkjW6XtV7i9NOsRnAuqA1P34fltaD8Vpk69tFOOj5BiAkKDxmoR+pbmSqGmLFcvrDn0WS+ec5Y5dn6i5e8y8gejT3XO1/yhLxz6KK+jKVyacfTkycdQEUXfpRJjzJ5rPsDkWEXo824HXB+LEN90Np/X1H6VdItQ6KBDrShgyh5WSAoJGlPzyFKk51fSxiVnm1X9BKHCaOp6EdzYGkgqQ/e/QYdOQubxkeln4Lp4vPoUxWIZItcQBathVod5V9uB10puVmhI3eF6eeqHyCRoIyTRZJSjBsbmGPkK3vGMNeBY2sbjOdZQaL4RAtNuisNmXzp3UcTohN19ViWijitd0kI02k6vwZbIkoAFRZfZwvLlXwPjZ6vqaDR3HevEC6GcZvVVf00RxTtGqj5xdYYOXwb/JqPgfbXdSuxbpkatHsnnLZdOtKzw2JgH/eS8Z154wwygRJUnbD5NuIXd5TNmfJu8QOEKPlNMIxerQHpWYyl3yBgNAm8/McM3P9Zp27IFLvt/AhB8QW5WNzIzJ2Mle7laiKE8hLLPZyFuleeBKKuYohsHj8XNZXUQGaURUSXy6BOFLsV/NtulKdbn2J9Yi2urafMxCjL0NwtSFeAYmgqr2Rl0rt6ubBNBZR+8ENkvogS7B6I0qhdGOK2aHvKlmTuiKQbGdu/dTALhY5QEKECgdFE1Idy6fah2P6IeS4dfqrUdyXgjtSI7o1n1WHmYZ67z54jGdIwp5cZifqRjJxLfALUtVpHJeFXv8n63U1R/Hhc++bl2Zo16y899Q2kIBTNQBasLGlcjdKR4xeB0QY6HKvpw68smxHu/+u/ym1kHQAm9S/9peB+gBqjSw42X+Saea18xIUvqvluZeQ2Bl8aGMRTp+Nx1PXODkIvLNY3oo";
-
-
+        //input token here
+        String s = "";
         try {
             appiumDriver = new AppiumDriver(
                 new URL("https://EPM-TSTF:" +
                     URLEncoder.encode(s, StandardCharsets.UTF_8.toString()) +
-                    "@mobilecloud.epam.com/wd/hub") , capabilities);
+                    "@mobilecloud.epam.com/wd/hub"), capabilities);
         } catch (MalformedURLException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -97,6 +94,6 @@ public class BaseTest implements IDriver {
     }
 
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
-        po = new PageObject(appType, appiumDriver);
+        pageObject = new PageObject(appType, appiumDriver);
     }
 }
