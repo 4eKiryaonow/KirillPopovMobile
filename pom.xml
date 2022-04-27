@@ -10,6 +10,7 @@
 
   <properties>
   <testng.configs.path>${project.build.testOutputDirectory}</testng.configs.path>
+
   </properties>
 
   <dependencies>
@@ -41,7 +42,7 @@
             <suiteXmlFile>${suite.file}</suiteXmlFile>
           </suiteXmlFiles>
           <systemPropertyVariables>
-            <ts.appium>http://127.0.0.1:4723/wd/hub</ts.appium>
+            <env.token></env.token>
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -59,22 +60,27 @@
 
   <profiles>
     <profile>
-      <id>native</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
+      <id>cloudWebAndroid</id>
       <properties>
-        <suite.file>${testng.configs.path}/nativeTNG.xml</suite.file>
+        <suite.file>${project.basedir}/src/test/resources/cloudWebAndroidTNG.xml</suite.file>
       </properties>
     </profile>
-
     <profile>
-      <id>web</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
+      <id>cloudNativeAndroid</id>
       <properties>
-        <suite.file>${testng.configs.path}/webTNG.xml</suite.file>
+        <suite.file>${project.basedir}/src/test/resources/cloudNativeAndroidTNG.xml</suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>cloudWebIos</id>
+      <properties>
+        <suite.file>${project.basedir}/src/test/resources/cloudWebIosTNG.xml</suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>cloudNativeIos</id>
+      <properties>
+        <suite.file>${project.basedir}/src/test/resources/cloudNativeIosTNG.xml</suite.file>
       </properties>
     </profile>
   </profiles>
