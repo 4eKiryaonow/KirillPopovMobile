@@ -2,7 +2,7 @@
 <suite name="Native mobile testing Suite">
   <parameter name="appType" value="native"/>
   <parameter name="platformName" value="iOS"/>
-  <parameter name="udid" value="00008030-001458E02178802E"/>
+  <parameter name="udid" value="00008020-00026912029A002E"/>
   <parameter name="bundleId" value="com.epam.EPAMTestApp.ii"/>
 
 

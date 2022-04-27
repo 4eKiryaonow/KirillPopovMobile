@@ -1,5 +1,7 @@
 package com.epam.tc.hw2.setup;
 
+import static java.lang.String.format;
+
 import com.epam.tc.hw2.pageObjects.PageObject;
 import io.appium.java_client.AppiumDriver;
 import java.io.File;
@@ -17,6 +19,8 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest implements IDriver {
 
+    private static final String APPIUM_HUB = "mobilecloud.epam.com";
+    private static final String PROJECT_NAME = "kirill_popov";
     private static AppiumDriver appiumDriver; // singleton
     private static PageObject pageObject;
 
@@ -54,7 +58,8 @@ public class BaseTest implements IDriver {
     }
 
     private void setAppiumDriver(String platformName, String deviceName, String udid, String browserName, String app,
-                                 String appPackage, String appActivity, String bundleId) {
+                                 String appPackage, String appActivity, String bundleId)
+        throws UnsupportedEncodingException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //mandatory Android capabilities
         capabilities.setCapability("platformName", platformName);
@@ -78,14 +83,12 @@ public class BaseTest implements IDriver {
         if (platformName.equals("iOS")) {
             capabilities.setCapability("automationName", "XCUITest");
         }
-        //input token here
-        String s = "";
+
         try {
+            String token = URLEncoder.encode(System.getProperty("env.token"), StandardCharsets.UTF_8.name());
             appiumDriver = new AppiumDriver(
-                new URL("https://EPM-TSTF:" +
-                    URLEncoder.encode(s, StandardCharsets.UTF_8.toString()) +
-                    "@mobilecloud.epam.com/wd/hub"), capabilities);
-        } catch (MalformedURLException | UnsupportedEncodingException e) {
+                new URL(format("https://%s:%s@%s/wd/hub", PROJECT_NAME, token, APPIUM_HUB)), capabilities);
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 

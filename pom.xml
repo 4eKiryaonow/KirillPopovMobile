@@ -42,7 +42,7 @@
             <suiteXmlFile>${suite.file}</suiteXmlFile>
           </suiteXmlFiles>
           <systemPropertyVariables>
-
+            <env.token></env.token>
           </systemPropertyVariables>
         </configuration>
       </plugin>
